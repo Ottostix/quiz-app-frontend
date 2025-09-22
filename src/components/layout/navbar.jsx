@@ -18,7 +18,7 @@ export default function Navbar() {
     <nav className="bg-card border-b border-border px-4 py-3">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <img src="/ya-lesedi-logo-desktop.png" alt="Ya Lesedi Logo" className="h-10" />
+          <img src="/ya-lesedi-logo-luxury.png" alt="Ya Lesedi Logo" className="h-12" />
         </div>
         
         <div className="flex items-center space-x-4">
