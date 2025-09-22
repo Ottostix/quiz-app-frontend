@@ -25,6 +25,8 @@ import Footer from "./components/layout/footer";
 import { LoadingScreen } from "@/components/ui/loading-screen";
 import { OfflineIndicator, OfflineBanner } from "@/components/ui/offline-indicator";
 import { Suspense, lazy } from "react";
+import DocumentUpload from "./components/DocumentUpload";
+import DocumentList from "./components/DocumentList";
 
 // Layout component for authenticated pages
 function AppLayout({ children }) {
@@ -163,6 +165,22 @@ function AppRoutes() {
         {() => (
           <ProtectedRoute>
             {(user) => <QuizGenerator />}
+          </ProtectedRoute>
+        )}
+      </Route>
+
+      <Route path="/documents/upload">
+        {() => (
+          <ProtectedRoute admin={true}>
+            {(user) => <DocumentUpload />}
+          </ProtectedRoute>
+        )}
+      </Route>
+
+      <Route path="/documents/list">
+        {() => (
+          <ProtectedRoute>
+            {(user) => <DocumentList />}
           </ProtectedRoute>
         )}
       </Route>

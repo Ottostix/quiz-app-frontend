@@ -12,7 +12,8 @@ import {
   BookOpen,
   Store,
   ChefHat,
-  Sparkles
+  Sparkles,
+  FileText
 } from "lucide-react";
 
 export default function Sidebar() {
@@ -33,6 +34,8 @@ export default function Sidebar() {
     { path: "/menus", label: "Menus", icon: MenuIcon },
     { path: "/recipes", label: "Recipes", icon: ChefHat },
     { path: "/quiz-generator", label: "AI Quiz Generator", icon: Sparkles },
+    { path: "/documents/upload", label: "Upload Document", icon: FileText, adminOnly: true },
+    { path: "/documents/list", label: "View Documents", icon: FileText },
   ];
 
   const adminItems = [
