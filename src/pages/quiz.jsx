@@ -5,49 +5,15 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { CheckCircle, Clock, ArrowRight, ArrowLeft } from "lucide-react";
+import { ohsFoodSafetyQuiz } from "../data/ohsFoodSafetyQuiz"; // Import the OHS and Food Safety quiz data
 
 export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
   const [isCompleted, setIsCompleted] = useState(false);
 
-  // Sample quiz data
-  const quizData = {
-    title: "General Knowledge Quiz",
-    description: "Test your knowledge with these questions",
-    questions: [
-      {
-        id: 1,
-        question: "What is the capital of France?",
-        options: ["London", "Berlin", "Paris", "Madrid"],
-        correct: 2
-      },
-      {
-        id: 2,
-        question: "Which planet is known as the Red Planet?",
-        options: ["Venus", "Mars", "Jupiter", "Saturn"],
-        correct: 1
-      },
-      {
-        id: 3,
-        question: "What is 2 + 2?",
-        options: ["3", "4", "5", "6"],
-        correct: 1
-      },
-      {
-        id: 4,
-        question: "Who painted the Mona Lisa?",
-        options: ["Van Gogh", "Picasso", "Da Vinci", "Monet"],
-        correct: 2
-      },
-      {
-        id: 5,
-        question: "What is the largest ocean on Earth?",
-        options: ["Atlantic", "Indian", "Arctic", "Pacific"],
-        correct: 3
-      }
-    ]
-  };
+  // Use the imported OHS and Food Safety quiz data
+  const quizData = ohsFoodSafetyQuiz;
 
   const progress = ((currentQuestion + 1) / quizData.questions.length) * 100;
   const currentQ = quizData.questions[currentQuestion];
@@ -94,7 +60,7 @@ export default function Quiz() {
             </div>
             <CardTitle className="text-2xl">Quiz Completed!</CardTitle>
             <CardDescription>
-              You've successfully completed the {quizData.title}
+              You\'ve successfully completed the {quizData.title}
             </CardDescription>
           </CardHeader>
           <CardContent className="text-center space-y-6">
@@ -199,4 +165,5 @@ export default function Quiz() {
     </div>
   );
 }
+
 
