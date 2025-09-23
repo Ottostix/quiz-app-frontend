@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: quiz-app-frontend
+    env: node
+    buildCommand: "pnpm install --no-frozen-lockfile && pnpm run build"
+    startCommand: "pnpm start"
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: NPM_FLAGS
+        value: --no-frozen-lockfile
